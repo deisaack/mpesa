@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% if messages %}
+    {% for message in messages %}
+        <p>{{ message }}</p>
+    {% endfor %}
+{% endif %}
+<h3>Question: <small>{{ question }}</small></h3>
+<p>{{ question.description }}</p>
+<a href="{{ question.get_absolute_url }}update/">Update</a>
+{% endblock content %}

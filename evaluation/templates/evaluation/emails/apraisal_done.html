@@ -1,0 +1,8 @@
+{% autoescape off %}
+Hi {{ user }},
+Your appraisal was successful and the followimg was achieved
+    {% for detail in details %}
+        {{ forloop.counter }}: {{ detail }}
+    {% endfor %}
+    The http://{{ domain }} team says , thank you very much.
+{% endautoescape %}

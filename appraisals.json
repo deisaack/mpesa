@@ -1,0 +1,42 @@
+[
+{
+    "model": "evaluation.appraisal",
+    "pk": 1,
+    "fields": {
+        "evaluation": 8,
+        "detail": "Increased salary by 2000",
+        "superior": null,
+        "date": "2017-08-02T16:58:31.274Z"
+    }
+},
+{
+    "model": "evaluation.appraisal",
+    "pk": 2,
+    "fields": {
+        "evaluation": null,
+        "detail": "what is that",
+        "superior": null,
+        "date": "2017-08-02T16:58:56.140Z"
+    }
+},
+{
+    "model": "evaluation.appraisal",
+    "pk": 3,
+    "fields": {
+        "evaluation": 8,
+        "detail": "okdh j",
+        "superior": null,
+        "date": "2017-08-02T17:09:58.159Z"
+    }
+},
+{
+    "model": "evaluation.appraisal",
+    "pk": 4,
+    "fields": {
+        "evaluation": 8,
+        "detail": "okdh j",
+        "superior": null,
+        "date": "2017-08-02T17:14:29.832Z"
+    }
+}
+]

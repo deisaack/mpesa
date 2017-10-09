@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h3>{{ staff }} <small>Username({{ staff.user }})</small></h3>
+    <p>Superior : {{ staff.superior }}</p>
+    <p>Position : {{ staff.position }}</p>
+    <p>Salary : {{ staff.salary }}</p>
+    <p><b><em><u>Evaluations:</u></em></b>
+        <br>
+    {% if evaluation_list %}
+    <table border="1px"><th>No:</th><th>Date</th><th>Score</th> <th>Link</th>
+    {% endif %}
+    {% for evaluation in evaluation_list %}
+       <tr><td>{{ forloop.counter }}</td>
+        <td>{{ evaluation.created }}</td>
+        <td>{{ evaluation.percentage }}%</td>
+        <td><a href="{{ evaluation.get_absolute_url }}"> view</a></td>
+       </tr>
+    {% empty %}
+        The staff has never been evaluated. <br>
+        <a class="btn btn-primary btn-sm" href="{% url 'evaluation:evaluation_create' %}">Evaluate</a>
+    {% endfor %}
+    </table>
+
+    </p>
+{% endblock %}

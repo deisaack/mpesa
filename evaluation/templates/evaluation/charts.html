@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="col-xs-10 col-xs-offset-1">
+        <h1>Hello world!!</h1>
+<canvas id="myChart" width="400" height="400"></canvas>
+    </div>
+{% endblock %}
+<script>
+{% block jquery %}
+        var endpoint = 'http://127.0.0.1:8000/api/chart/data/'
+        var defaultData = []
+        var labels = [];
+        $.ajax({
+            method: 'GET',
+            url: endpoint,
+            success: function (data) {
+                labels = data.labels
+                defaultData = data.default
+                setChart()
+                console.log(data.default)
+            },
+            error: function (error_data) {
+                console.log('error')
+                console.log(error_data)
+            }
+        })
+
+        function setChart() {
+            var ctx = document.getElementById('myChart');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        labels: 'appraisal',
+                        data: defaultData,
+                        backgroundColor:
+{#                            'rgba(55, 199, 32, 0.7',#}
+                        [
+                            'rgba(255, 99, 132, 0.5',
+                            'rgba(54, 162, 235, 0.5',
+                            'rgba(255, 206, 86, 0.5',
+                            'rgba(75, 192, 192, 0.5',
+                            'rgba(153, 102, 255, 0.5',
+                            'rgba(255, 159, 64, 0.5',
+                            'rgba(55, 99, 132, 0.5',
+                            'rgba(54, 12, 235, 0.5',
+                            'rgba(255, 206, 186, 0.5',
+                            'rgba(175, 192, 192, 0.5',
+                            'rgba(153, 202, 255, 0.5',
+                            'rgba(255, 159, 214, 0.5',
+                            'rgba(135, 99, 132, 0.5',
+                            'rgba(54, 100, 235, 0.5',
+                            'rgba(255, 206, 206, 0.5',
+                            'rgba(205, 192, 192, 0.5',
+                            'rgba(153, 2, 255, 0.5',
+                            'rgba(255, 159, 6, 0.5'
+                        ],
+                        borderWidth: 1,
+                    }]
+                },
+
+            options: {
+                title: {
+                    display: true,
+                    text: 'Appraisals Done at Kenindus'
+                },
+                legend: {
+
+                    display: true,
+                    labels: {
+                        fontColor: 'rgb(255, 99, 132)'
+                    }
+                },
+                cutoutPercentage: 30,
+                hoverBackgroundColor: 'rgba(255, 155, 55, 0.8',
+
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+                }
+            });
+        }
+
+{% endblock %}
+</script>

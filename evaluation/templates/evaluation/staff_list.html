@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h3>Staff</h3>
+{% for staff in staff_list %}
+    <h5><a href="{{ staff.get_absolute_url }}">{{ staff }}</a></h5>
+{% endfor %}
+
+{% endblock content %}

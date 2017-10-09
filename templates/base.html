@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kenindus</title>
+    <link rel="stylesheet" href="{% static 'css/libs/bootstrap/css/bootstrap.min.css' %}">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+{% block body %}
+    <div class="container">
+{% if messages %}
+{% include 'inc/messages.html' %}
+{% endif %}
+        <div class="row"><div class="col-sm-3">
+            <h3>Links:</h3>
+            <a href="/admin/">Admin</a>
+            <br>
+{#            <a href="{% url 'evaluation:apraisal_create' %}">Create Appraisal</a><br />#}
+            <a href="{% url 'evaluation:evaluation_create' %}">Create Evaluation</a><br />
+            <a href="{% url 'evaluation:staff_create' %}">Add staff</a><br />
+            <a href="{% url 'evaluation:question_create' %}">Create Question</a><br />
+            <a href="{% url 'evaluation:evaluation_list' %}">Evaluation List</a><br />
+            <a href="{% url 'evaluation:chart_data' %}">chart_data</a><br />
+            <a href="{% url 'evaluation:staff_list' %}">Staff List</a><br />
+        </div><div class="col-sm-9">
+{% block content %}
+
+{% endblock content %}
+
+</div>
+        </div>
+    </div>
+{% endblock body %}
+{% block js %}
+
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'css/libs/bootstrap/js/bootstrap.min.js' %}?=100"></script>
+<script src="{% static 'js/chartjs.min.js' %}?=100"></script>
+{% endblock js %}
+{% block my_js %}
+
+{% endblock my_js %}
+
+<script>
+$(document).ready(function () {
+    {% block jquery %}
+
+    {% endblock %}
+})
+</script>
+    {% block javascript %}
+    {% endblock %}
+</body>
+</html>

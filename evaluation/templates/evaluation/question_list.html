@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h3>Questions</h3>
+{% for question in question_list %}
+    <h5><a href="{{ question.get_absolute_url }}">{{ question.title }}</a></h5>
+{% endfor %}
+
+{% endblock content %}

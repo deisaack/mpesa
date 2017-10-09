@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h3>Add Staff</h3>
+    <form action="" method="post" role="form">
+              {% csrf_token %}
+              {{ form }}
+            <button type="submit" class="btn waves-effect waves-light light-green darken-4">Submit</button>
+    </form>
+{% endblock content %}

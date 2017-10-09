@@ -1,0 +1,13 @@
+{{ message }}
+{% if errors %}{{ errors.as_text }}
+{% endif %}
+===============
+{% if payment %}{% with ipn=payment.original %}
+Payment amount: {{ ipn.mpesa_amt }}
+Payment reference: {{ ipn.mpesa_acc }}
+Sender: {{ ipn.mpesa_sender }}
+Sender phonenumber: {{ ipn.mpesa_msisdn }}
+IPN code: {{ ipn.mpesa_code }}
+Time received: {{ ipn.tstamp }}
+{% endwith %}{% elif params %}{% for key, value in params.items %}
+{{ key }}: {{ value }}{% endfor %}{% endif %}

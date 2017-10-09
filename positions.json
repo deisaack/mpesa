@@ -1,0 +1,58 @@
+[
+{
+    "model": "evaluation.position",
+    "pk": 1,
+    "fields": {
+        "title": "Djangonist",
+        "description": "sdhgdghs"
+    }
+},
+{
+    "model": "evaluation.position",
+    "pk": 2,
+    "fields": {
+        "title": "Javascriptter",
+        "description": "hdddddddddddddddd"
+    }
+},
+{
+    "model": "evaluation.position",
+    "pk": 3,
+    "fields": {
+        "title": "Human Resource",
+        "description": "hj"
+    }
+},
+{
+    "model": "evaluation.position",
+    "pk": 4,
+    "fields": {
+        "title": "Technician",
+        "description": "hjsd"
+    }
+},
+{
+    "model": "evaluation.position",
+    "pk": 5,
+    "fields": {
+        "title": "Networker",
+        "description": "n"
+    }
+},
+{
+    "model": "evaluation.position",
+    "pk": 6,
+    "fields": {
+        "title": "Designer",
+        "description": "ye"
+    }
+},
+{
+    "model": "evaluation.position",
+    "pk": 7,
+    "fields": {
+        "title": "Designer",
+        "description": "ye"
+    }
+}
+]

@@ -1,0 +1,12 @@
+{% load mpesa_tags %}
+M-PESA payment received
+===============
+Order: {% absurl "dashboard:order-detail" order.number %}
+{% with ipn=payment.original %}
+Payment amount: {{ ipn.mpesa_amt }}
+Payment reference: {{ ipn.mpesa_acc }}
+Sender: {{ ipn.mpesa_sender }}
+Sender phonenumber: {{ ipn.mpesa_msisdn }}
+IPN code: {{ ipn.mpesa_code }}
+Time received: {{ ipn.tstamp }}
+{% endwith %}

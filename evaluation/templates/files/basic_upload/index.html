@@ -1,0 +1,43 @@
+{% extends 'files/base.html' %}
+
+{% load static %}
+
+{% block title %}Basic Upload{% endblock %}
+
+{% block javascript %}
+  {# JQUERY FILE UPLOAD SCRIPTS #}
+  <script src="{% static 'js/jquery-file-upload/vendor/jquery.ui.widget.js' %}"></script>
+  <script src="{% static 'js/jquery-file-upload/jquery.iframe-transport.js' %}"></script>
+  <script src="{% static 'js/jquery-file-upload/jquery.fileupload.js' %}"></script>
+
+  {# PHOTOS PAGE SCRIPTS #}
+  <script src="{% static 'files/js/basic-upload.js' %}"></script>
+{% endblock %}
+
+{% block files_content %}
+  <div style="margin-bottom: 20px;">
+    <button type="button" class="btn btn-primary js-upload-files">
+      <span class="glyphicon glyphicon-cloud-upload"></span> Upload files
+    </button>
+<form method="post" action="">
+    <input id="fileupload" type="file" name="file" multiple
+           style="display: none;"
+           data-url="{% url 'evaluation:basic_upload' %}"
+           data-form-data='{"csrfmiddlewaretoken": "{{ csrf_token }}"}'>
+</form>
+  </div>
+  <table id="gallery" class="table table-bordered">
+    <thead>
+      <tr>
+        <th>File</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for file in files %}
+        <tr>
+          <td><a href="{{ file.file.url }}">{{ file.file.name }}</a></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

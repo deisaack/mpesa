@@ -1,0 +1,73 @@
+        var endpoint = '/api/chart/data/'
+        var defaultData = []
+        var labels = [];
+        $.ajax({
+            method: 'GET',
+            url: endpoint,
+            success: function (data) {
+                labels = data.labels
+                defaultData = data.default
+                setChart()
+                console.log(data.default)
+            },
+            error: function (error_data) {
+                console.log('error')
+                console.log(error_data)
+            }
+        })
+
+        function setChart() {
+            var ctx = document.getElementById('myChart');
+            var myChart = new Chart(ctx, {
+                type: 'polarArea',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        labels: '# of Votes',
+                        data: defaultData,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2',
+                            'rgba(54, 162, 235, 0.2',
+                            'rgba(255, 206, 86, 0.2',
+                            'rgba(75, 192, 192, 0.2',
+                            'rgba(153, 102, 255, 0.2',
+                            'rgba(255, 159, 64, 0.2'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 0.2',
+                            'rgba(54, 162, 235, 0.2',
+                            'rgba(255, 206, 86, 0.2',
+                            'rgba(75, 192, 192, 0.2',
+                            'rgba(153, 102, 255, 0.2',
+                            'rgba(255, 159, 64, 0.2'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+                }
+            });
+        }
+
+
+class ChartData(APIView):
+    authentication_classes = []
+    permission_classes = []
+
+    def get(self, request, format=None):
+        qs_count = User.objects.all().count()
+        labels = ['users', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange']
+        default_items = [qs_count, 23, 2, 7, 12, 2]
+        data = {
+            'labels': labels,
+            'default': default_items,
+        }
+        return Response(data)

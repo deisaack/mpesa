@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+
+    <label>Staff</label>
+    {{ evaluation_form.staff }}
+    {% if evaluation_form.staff.errors %}
+        {% for error in evaluation_form.staff.errors %}
+            {{ error|escape }}
+        {% endfor %}
+    {% endif %}
+
+    <hr>
+
+    {{ question_formset.management_form }}
+
+    {% for question_form in question_formset %}
+        <div class="question-formset">
+            {{ question_form.title }}
+            {% if question_form.title.errors %}
+                {% for error in question_form.title.errors %}
+                    {{ error|escape }}
+                {% endfor %}
+            {% endif %}
+
+            {{ question_form.description }}
+            {% if question_form.description.errors %}
+                {% for error in question_form.description.errors %}
+                    {{ error|escape }}
+                {% endfor %}
+            {% endif %}
+
+            {{ question_form.rank }}
+            {% if question_form.rank.errors %}
+                {% for error in question_form.rank.errors %}
+                    {{ error|escape }}
+                {% endfor %}
+            {% endif %}
+        </div>
+    {% endfor %}
+
+    {% if question_formset.non_form_errors %}
+        {% for error in question_formset.non_form_errors %}
+            {{ error|escape }}
+        {% endfor %}
+    {% endif %}
+    <input type="submit" value="Create evaluation" class="button"/>
+</form>
+
+<!-- Include formset plugin - including jQuery dependency -->
+
+{% endblock content %}
+{% block my_js %}
+{#<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>#}
+<script src="{% static 'js/jquery.formset.js' %}"></script>
+<script>
+    $('.question-formset').formset({
+        addText: 'add question',
+        deleteText: 'remove'
+    });
+</script>
+{% endblock %}

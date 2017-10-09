@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% if messages %}
+    {% for message in messages %}
+        <p>{{ message }}</p>
+    {% endfor %}
+{% endif %}
+{% for evaluation in evaluation_list %}
+    <h4><a href="{{ evaluation.get_absolute_url }}">{{ evaluation }}: {{ evaluation.date }}</a></h4>
+
+{% endfor %}
+{% endblock content %}

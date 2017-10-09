@@ -1,0 +1,193 @@
+[
+{
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+        "app_label": "admin",
+        "model": "logentry"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+        "app_label": "auth",
+        "model": "user"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+        "app_label": "auth",
+        "model": "permission"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+        "app_label": "auth",
+        "model": "group"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+        "app_label": "contenttypes",
+        "model": "contenttype"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+        "app_label": "sessions",
+        "model": "session"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+        "app_label": "evaluation",
+        "model": "evaluation"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+        "app_label": "evaluation",
+        "model": "question"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+        "app_label": "sites",
+        "model": "site"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 12,
+    "fields": {
+        "app_label": "flatpages",
+        "model": "flatpage"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 13,
+    "fields": {
+        "app_label": "evaluation",
+        "model": "position"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 15,
+    "fields": {
+        "app_label": "evaluation",
+        "model": "appraisal"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 16,
+    "fields": {
+        "app_label": "evaluation",
+        "model": "staff"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "6t6ur1corgnk7zihfx30zvg8j7ni1673",
+    "fields": {
+        "session_data": "MzFjZmQ4MDYxYjgyZjNiMmFhMWY1MjBlMmQ5NTdiNDZhOGNhYTJjMDp7Il9hdXRoX3VzZXJfaWQiOiI0IiwiX2F1dGhfdXNlcl9oYXNoIjoiYmUwYjU3YjQ2NmM1MzQ5MGEzMTYzNTU0ZDVlMDMzOTI2YmQ1Yjk5YyIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIn0=",
+        "expire_date": "2017-08-30T06:17:17.678Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "dx7ypczk01ixyd0vstv3hdlbhkrrp8xx",
+    "fields": {
+        "session_data": "NzdlNDQyNTAzMTJjYzZmY2QyNGQ0YzE4Yjk3ZTczZTg1MWUzNzdlZDp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJlMGQxMzZlYTcwYWY4NDZhOWE1ZjdlZWQ4NTdmOGFhYjZjNzY1NTBmIn0=",
+        "expire_date": "2017-08-15T20:32:53.875Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "kl8hioun519wwf8aby4bqp7y7up41vgy",
+    "fields": {
+        "session_data": "ODFmNWQzYzAyNGY5OTRhZGI3M2MwMmEzZTI3NWFiMDYyOThlN2IxNTp7Il9hdXRoX3VzZXJfaGFzaCI6ImJlMGI1N2I0NjZjNTM0OTBhMzE2MzU1NGQ1ZTAzMzkyNmJkNWI5OWMiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiI0In0=",
+        "expire_date": "2017-08-30T07:40:55.134Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "qo8wk6vgt26rv34g46hotew15zfnaf19",
+    "fields": {
+        "session_data": "MzAyNGRkYTVhNjhhOThhZTE4NDYxYzVlYzRhZWMwM2U3YzM5MTFkMjp7Il9hdXRoX3VzZXJfaGFzaCI6ImUwZDEzNmVhNzBhZjg0NmE5YTVmN2VlZDg1N2Y4YWFiNmM3NjU1MGYiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=",
+        "expire_date": "2017-08-16T11:27:29.859Z"
+    }
+},
+{
+    "model": "evaluation.position",
+    "pk": 1,
+    "fields": {
+        "title": "Djangonist",
+        "description": "sdhgdghs"
+    }
+},
+{
+    "model": "evaluation.position",
+    "pk": 2,
+    "fields": {
+        "title": "Javascriptter",
+        "description": "hdddddddddddddddd"
+    }
+},
+{
+    "model": "evaluation.position",
+    "pk": 3,
+    "fields": {
+        "title": "Human Resource",
+        "description": "hj"
+    }
+},
+{
+    "model": "evaluation.position",
+    "pk": 4,
+    "fields": {
+        "title": "Technician",
+        "description": "hjsd"
+    }
+},
+{
+    "model": "evaluation.position",
+    "pk": 5,
+    "fields": {
+        "title": "Networker",
+        "description": "n"
+    }
+},
+{
+    "model": "evaluation.position",
+    "pk": 6,
+    "fields": {
+        "title": "Designer",
+        "description": "ye"
+    }
+},
+{
+    "model": "evaluation.position",
+    "pk": 7,
+    "fields": {
+        "title": "Designer",
+        "description": "ye"
+    }
+}

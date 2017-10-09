@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% if messages %}
+    {% for message in messages %}
+        <p>{{ message }}</p>
+    {% endfor %}
+{% endif %}
+<h3>Apraise {{ staff }}({{ staff.user }})</h3>
+    Current Sallary = {{ staff.salary }}
+    <form action="" method="post" role="form" >
+              {% csrf_token %}
+                  {{ form.media }}
+              {{ form.as_p }}
+        <div id="uploadBtn"></div>
+        {{ staff.staff_no }}
+        <div style="margin-bottom: 20px;">
+    <button type="button" class="btn btn-primary js-upload-files">
+      <span class="glyphicon glyphicon-cloud-upload"></span> Upload files
+    </button>
+    <input id="fileupload" type="file" name="file" multiple
+           style="display: none;"
+           data-url="{% url 'evaluation:apraisal_file' staff_no=staff.staff_no %}"
+           data-form-data='{"csrfmiddlewaretoken": "{{ csrf_token }}"}'>
+  </div>
+            <button style="margin-left: 150px;" type="submit" class="btn btn-warning">Submit</button>
+    </form>
+    <div class="modal fade" id="modal-progress" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Uploading...</h4>
+        </div>
+        <div class="modal-body">
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 0%;">0%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
+{% block javascript %}
+  {# JQUERY FILE UPLOAD SCRIPTS #}
+  <script src="{% static 'js/jquery-file-upload/vendor/jquery.ui.widget.js' %}"></script>
+  <script src="{% static 'js/jquery-file-upload/jquery.iframe-transport.js' %}"></script>
+  <script src="{% static 'js/jquery-file-upload/jquery.fileupload.js' %}"></script>
+
+  {# PHOTOS PAGE SCRIPTS #}
+  <script src="{% static 'files/js/progress-bar-upload.js' %}"></script>
+{% endblock %}
