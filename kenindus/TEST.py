@@ -1,14 +1,14 @@
 import requests
 from requests.auth import HTTPBasicAuth
-#
-# consumer_key = "060pCEKpfAe6vT7wKvhxdIPSA8EdrzBd"
-# consumer_secret = "ZbAqffAgxqE8sTjR"
+
+consumer_key = "060pCEKpfAe6vT7wKvhxdIPSA8EdrzBd"
+consumer_secret = "ZbAqffAgxqE8sTjR"
 # api_URL = "https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials"
 #
 # r = requests.get(api_URL, auth=HTTPBasicAuth(consumer_key, consumer_secret))
 # r = r.text
 # print(r)
-#
+# #
 # import pympesa
 #
 # response = pympesa.oauth_generate_token(
@@ -16,36 +16,49 @@ from requests.auth import HTTPBasicAuth
 # access_token = response.get("access_token")
 # print(access_token)
 
-# from pympesa import Pympesa
-#
-# import requests
+from pympesa import Pympesa
 
-access_token = "xlTTAVmRdz995NigZxC3G9HwgGY7"
 import requests
+
+access_token = "lr5B2Yup4knxsJSLdWqym4qeDCCX"
+# import requests
 #
 # url="http://d20a6b30.ngrok.io/f/mpesa/"
+url="https://iipesa.herokuapp.com:80/f/mpesa/"
 # api_url = "http://sandbox.safaricom.co.ke/mpesa/c2b/v1/registerurl"
 # headers = {"Authorization": "Bearer %s" % access_token}
 # request = { "ShortCode": "600337",
 #     "ResponseType": "application/json",
 #     "ConfirmationURL": url,
 #     "ValidationURL": url}
-
 import requests
 
-api_url = "https://sandbox.safaricom.co.ke/mpesa/c2b/v1/simulate"
+api_url = "https://sandbox.safaricom.co.ke/mpesa/c2b/v1/registerurl"
 headers = {"Authorization": "Bearer %s" % access_token}
-request = { "ShortCode":"600337",
-  "CommandID":"CustomerPayBillOnline",
-  "Amount":"600",
-  "Msisdn":"254708374149",
-  "BillRefNumber":"testapi0337" }
+request = { "ShortCode": "600337",
+    "ResponseType": "Completed",
+    "ConfirmationURL": url,
+    "ValidationURL": url}
 
 response = requests.post(api_url, json = request, headers=headers)
 
 print (response.text)
 
+# import requests
+#
+# api_url = "https://sandbox.safaricom.co.ke/mpesa/c2b/v1/simulate"
+# headers = {"Authorization": "Bearer %s" % access_token}
+# request = { "ShortCode":"600337",
+#   "CommandID":"CustomerPayBillOnline",
+#   "Amount":"600",
+#   "Msisdn":"254708374149",
+#   "BillRefNumber":"testapi0337" }
+#
 # response = requests.post(api_url, json = request, headers=headers)
+#
+# print (response.text)
+#
+# # response = requests.post(api_url, json = request, headers=headers)
 #
 # print (response.text)
 # url="http://d20a6b30.ngrok.io/ipn/mpesa/"
